@@ -1,3 +1,0 @@
-Hello 77, you are 87 years old!
-Name in binary: 0b1001101
-Age in binary: 0b1010111
