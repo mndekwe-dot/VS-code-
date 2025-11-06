@@ -6,21 +6,21 @@ class Economy_class_passenger:
         self.date = date
     def get_info(self):
         return f"Passenger Name: {self.name}, From: {self.current_location}, To: {self.destination}, Date: {self.date}"
-class First_class_Passenger:
-    def __init__ (self,name,current_location,destination,date,weight,lounge_access):
+class First_class_Passenger(Economy_class_passenger):
+    def __init__ (name,current_location,destination,date,weight,lounge_access):
         super().__init__(self,name,current_location,destination,date)
         self.weight = weight
         self.lounge_access = lounge_access
     def get_info(self):
         return f"{super.get_info()}, Baggage Weight: {self.weight}kg, Lounge Access: {self.lounge_access}"
-class Premium_Passenger:
-    def __init__ (self,name,current_location,destination,date,weight,lounge_access,priority_boarding):
+class Premium_Passenger(Economy_class_passenger):
+    def __init__ (self,name,current_location,destination,date,weight,lounge_access,boarding_priority):
         super().__init__(name,current_location,destination,date)
         self.weight = weight
         self.lounge_access = lounge_access
-        self.boarding_priority = priority_boarding
+        self.boarding_priority = boarding_priority
     def get_info(self):
-        return f"{super.get_info()}, Baggage Weight: {self.weight}kg, Meal Preference: {self.meal_preference}"
+        return f"{super.get_info()}, Baggage Weight: {self.weight}kg"
 
 Economy1 = Economy_class_passenger("Alice","New York","London","2024-10-01")
 First1 = First_class_Passenger("Bob","Los Angeles","Tokyo","2024-11-15",30,True)
